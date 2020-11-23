@@ -13,4 +13,8 @@ class ProdutosController extends AppController {
         // pra mandar uma variável pra visualização
         $this->set('produtos', $produtos);
     }
+
+    public function novo() {
+        
+    }
 }

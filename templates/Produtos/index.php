@@ -22,3 +22,10 @@
         ?>
     </tbody>
 </table>
+
+<?php
+// helper para fazer um link com o controller
+    echo $this->Html->Link('Novo Produto', ['controller' => 'produtos', 'action' => 'novo']);
+
+?>
+<a href="produtos/novo">Novo Produto</a>
