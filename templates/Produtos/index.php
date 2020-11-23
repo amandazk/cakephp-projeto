@@ -8,11 +8,17 @@
         </tr>
     </thead>
     <tbody>
+        <?php
+            foreach($produtos as $produto) {
+        ?>
         <tr>
-            <th><?= $produto['id']; ?></th>
-            <th><?= $produto['nome']; ?></th>
-            <th><?= $produto['preco']; ?></th>
-            <th><?= $produto['descricao']; ?></th>
+            <td><?= $produto['id']; ?></td>
+            <td><?= $produto['nome']; ?></td>
+            <td><?= $produto['preco']; ?></td>
+            <td><?= $produto['descricao']; ?></td>
         </tr>
+        <?php                    
+            }
+        ?>
     </tbody>
 </table>
