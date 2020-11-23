@@ -1,12 +1,14 @@
 <?php
 namespace App\Controller;
 
+use Cake\ORM\TableRegistry;
+
 class ProdutosController extends AppController {
 
     public function index() {
-        $produtos = [];
-        $produtos[]= ["id" => 1, "nome" => "HD 20gb", "preco" => 59.99, "descricao" => "HD 20gb da HP"];
-        $produtos[] = ["id" => 2, "nome" => "SSD 120gb", "preco" => 149.99, "descricao" => "SSD 120gb da WD"];
+        $produtosTable = TableRegistry::getTableLocator()->get('Produtos');
+
+        $produtos = $produtosTable->find('all');
 
         // pra mandar uma variável pra visualização
         $this->set('produtos', $produtos);
