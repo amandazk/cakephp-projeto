@@ -4,10 +4,10 @@ namespace App\Controller;
 class ProdutosController extends AppController {
 
     public function index() {
-        $msg = "BEM VINDO AO CAKE";
+        $produto = ["id" => 1, "nome" => "HD 20gb", "preco" => 59.99, "descricao" => "HD 20gb da HP"];
 
         // pra mandar uma variável pra visualização
-        $this->set('msg', $msg);
+        $this->set('produto', $produto);
     }
 }
 ?>

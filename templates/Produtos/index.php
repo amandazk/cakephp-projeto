@@ -9,10 +9,10 @@
     </thead>
     <tbody>
         <tr>
-            <th>1</th>
-            <th>HD 20gb</th>
-            <th>59.99</th>
-            <th>HD de 20gb da HP</th>
+            <th><?= $produto['id']; ?></th>
+            <th><?= $produto['nome']; ?></th>
+            <th><?= $produto['preco']; ?></th>
+            <th><?= $produto['descricao']; ?></th>
         </tr>
     </tbody>
 </table>
