@@ -28,4 +28,3 @@
     echo $this->Html->Link('Novo Produto', ['controller' => 'produtos', 'action' => 'novo']);
 
 ?>
-<a href="produtos/novo">Novo Produto</a>
