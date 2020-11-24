@@ -20,4 +20,17 @@ class ProdutosController extends AppController {
         $produto = $produtosTable -> newEmptyEntity();
         $this->set('produto', $produto);
     }
+
+    public function salva() {
+        $produtosTable = TableRegistry::getTableLocator()->get('Produtos');
+        $produto = $produtosTable -> newEmptyEntity($this->request->getData());
+        if ($produtosTable->save($produto)) {
+            $msg = "Produto salvo com sucesso :)";
+        } else {
+            $msg = "Não foi possível salvar o produto";
+        }
+        //pra disponibilizar a msg pra view (salva.php)
+        $this->set('msg', $msg);
+    }
 }
+
