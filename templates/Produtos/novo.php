@@ -4,7 +4,6 @@
     echo $this->Form->control('nome');
     echo $this->Form->control('preco');
     echo $this->Form->control('descricao');
+    echo $this->Form->button('Salvar');
     echo $this->Form->end();
-
-
 ?>
