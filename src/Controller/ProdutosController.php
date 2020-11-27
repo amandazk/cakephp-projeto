@@ -27,12 +27,15 @@ class ProdutosController extends AppController {
         $produto = $produtosTable -> newEmptyEntity($dados);
         if ($produtosTable->save($produto)) {
             $msg = "Produto salvo com sucesso";
+            $this->Flash->set($msg, ['element' => 'success']);
         } else {
             $msg = "Não foi possível salvar o produto";
+            $this->Flash->set($msg, ['element' => 'error']);
         }
         // print_r($this->request->getData()); exit;
         //pra disponibilizar a msg pra view (salva.php)
-        $this->set('msg', $msg);
+        // $this->set('msg', $msg);
+        $this->redirect('Produtos/index');
     }
 
     public function editar($id) {
@@ -47,8 +50,10 @@ class ProdutosController extends AppController {
         $produto = $produtosTable->get($id);
         if ($produtosTable->delete($produto)) {
             $msg = "Produto excluído com sucesso";
+            $this->Flash->set($msg, ['element' => 'error']);
         } else {
             $msg = "Não foi possível excluir o produto";
+            $this->Flash->set($msg);
         }
         $this->redirect('Produtos/index');
     }
