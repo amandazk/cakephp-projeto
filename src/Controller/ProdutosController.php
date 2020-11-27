@@ -41,5 +41,16 @@ class ProdutosController extends AppController {
         $this->set('produto', $produto);
         $this->render('novo');
     }
+
+    public function excluir($id) {
+        $produtosTable = TableRegistry::getTableLocator()->get('Produtos');
+        $produto = $produtosTable->get($id);
+        if ($produtosTable->delete($produto)) {
+            $msg = "Produto excluído com sucesso";
+        } else {
+            $msg = "Não foi possível excluir o produto";
+        }
+        $this->redirect('Produtos/index');
+    }
 }
 
