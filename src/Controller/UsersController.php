@@ -3,9 +3,16 @@ namespace App\Controller;
 
 use Cake\ORM\TableRegistry;
 use App\Model\Table\UsersTable;
-
+use Cake\Event\EventInterface;
 
 class UsersController extends AppController {
+
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+
+        $this->Auth->allow(['adicionar', 'salvar']);
+    }
 
     public function adicionar() {
 
