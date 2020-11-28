@@ -53,4 +53,6 @@
 // helper para fazer um link com o controller
 echo $this->Html->Link('Novo Produto', ['controller' => 'produtos', 'action' => 'novo']);
 
+echo $this->Html->Link('Logout', ['controller' => 'user', 'action' => 'logout']);
+
 ?>

@@ -38,12 +38,20 @@ class UsersController extends AppController {
     }
 
     public function login() {
+            
+        if($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) { // se encontrar um usuário
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            } else {
+                $this->Flash->set('Usuário ou senha inválido', ['element' => 'error']);
+            }
+        }
+    }
 
-        $userTable = TableRegistry::getTableLocator()->get('Users');
-        $user = $userTable -> newEmptyEntity($this->request->getData());
-
-        $this->set('user', $user);
+    public function logout()
+    {
+        return $this->redirect($this->Auth->logout());
     }
 }
-
-?>
